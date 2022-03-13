@@ -1,16 +1,8 @@
-let result = new Promise((res, rej) => {
-  res("sucess");
-  rej("failureeees");
-});
-
-async function test() {
-  try {
-    console.log(await result);
-  } catch (error) {
-    console.log(error);
-  }
-
-  
+try {
+  moveBy();
+} catch (error) {
+  throw "throw error";
+  console.log(error);
 }
 
-test();
+console.log("final line");   //this line not executed because of "throw" in catch block
