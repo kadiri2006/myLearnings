@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+}
+
+.child {
+  background-color: lightcoral;
+  margin: 0 auto;
+  max-width: 300px;
+  /* width: 100%; */
+}
