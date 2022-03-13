@@ -1,16 +1,16 @@
-let result = new Promise((res, rej) => {
-  res("sucess");
-  rej("failureeees");
-});
-
-async function test() {
-  try {
-    console.log(await result);
-  } catch (error) {
-    console.log(error);
-  }
-
-  
+function addition(a, b) {
+  return new Promise((x, y) => {
+    x(a + b);
+  });
 }
 
-test();
+addition(2, 3)
+  .then((x) => {
+    console.log(x);
+    return x + 10;
+  })
+  .then((x) => {
+    console.log(x);
+    return x + 10;
+  })
+  .then((x) => console.log(x));
