@@ -1,30 +1,34 @@
-function addition(a, b) {
-  return new Promise((x, y) => {            //here we did not provide setTimeout
-    x(a + b);                                 
-    console.log("test:addition");
-  });
-}
-
 function multiplication(a, b) {
   return new Promise((x, y) => {
-    setTimeout(() => {                        //here we providing setTimeout
-      x(a * b);
-    }, 2000);
-    console.log("test:multiplication");
+    setTimeout(() => {
+      if (a + b <= 5) {
+        x(a * b);
+      } else {
+        y("third:3");
+      }
+    }, 3000);
   });
 }
 
-/* addition(2, 3)
-  .then((x) => {
-    console.log(x);
-    return x + 10;
-  })
-  .then((x) => {
-    console.log(x);
-    return x + 10;
-  })
-  .then((x) => console.log(x));
- */
+async function call(a, b) {
+  let first = await multiplication(a, b);
+  console.log(`first:${first}`);
+  let second = await multiplication(first, b);
+  console.log(`second:${second}`);
 
-console.log(addition(1, 2));      //Promise {<fulfilled>: 3}
-console.log(multiplication(2, 3));  //Promise {<pending>}
+  try {
+    let res = await multiplication(second, b); //here we got "res" as error directly because of using "await" so error go's to catch block
+  } catch (error) {
+    throw error;
+  }
+}
+
+/* try {
+  console.log(call(1, 2)); //here we cant move into catch block because "call(1,2)" return promise .so that's why we use "then-catch"   [error in log:main.js:24 Uncaught (in promise) third:3]
+} catch (error) {
+  console.log(error);
+} */
+
+call(1, 2)
+  .then((x) => console.log(x))
+  .catch((x) => console.log(`error :${x}`));
