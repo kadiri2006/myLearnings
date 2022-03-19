@@ -5,16 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "pwa-chrome",
+      "name": "Launch Edge",
       "request": "launch",
-      "name": "Open index.html",
-      "file": "/home/kadiri/Desktop/projects/myLearnings/index.html"
+      "type": "pwa-msedge",
+      "url": "http://127.0.0.1:5501/index.html",
+      "webRoot": "${workspaceFolder}"
     },
     {
       "name": "Launch Microsoft Edge and open the Edge DevTools",
       "request": "launch",
       "type": "vscode-edge-devtools.debug",
-      "url": "/home/kadiri/Desktop/projects/myLearnings/index.html" // Provide your project's url to finish configuring
+      "url": "http://127.0.0.1:5501/index.html" // Provide your project's url to finish configuring
     }
   ]
 }
