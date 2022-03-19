@@ -140,10 +140,12 @@ let dummy = () => {
 };
 
 function name() {
-  return new Promise((res, rej) => res(console.log("name1")));
+  return new Promise((res, rej) => rej(console.log("name1")));
 }
 
 dummy();
 console.log("name5");
 console.log("name6");
 console.log("name7");
+
+//inthese case "rej" in "promise" out put displayed is same from  =>from name 0 to name 7 orderly
