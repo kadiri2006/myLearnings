@@ -130,10 +130,10 @@ dummy3(true, 1000)
 
 // await keyword code example   (best example for await)
 
-let dummy = () => {
+let dummy = async () => {
   //if no async to function ,its gives same results as before when there is no await
   console.log("name 0");
-  name(); //in no await
+  await name(); //in no await
   console.log("name2");
   console.log("name3");
   console.log("name4");
@@ -148,4 +148,6 @@ console.log("name5");
 console.log("name6");
 console.log("name7");
 
-//inthese case "rej" in "promise" out put displayed is same from  =>from name 0 to name 7 orderly
+//inthese case "rej" in "promise" and providing "async and await" to dummy function ,  out put displayed is as below
+
+//output:name 0,name 1,name 5,name 6,name 7
