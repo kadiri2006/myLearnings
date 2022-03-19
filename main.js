@@ -140,10 +140,10 @@ let dummy = async () => {
 };
 
 function name() {
-  return new Promise((res, rej) => rej(console.log("name1")));
+  return new Promise((res, rej) => { console.log("name 1");rej("rejected in Promise")})
 }
 
-dummy();
+dummy().catch((x) => console.log(`this is from dummy catch block :  ${x}`));
 console.log("name5");
 console.log("name6");
 console.log("name7");
