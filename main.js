@@ -130,15 +130,13 @@ dummy3(true, 1000)
 
 // await keyword code example   (best example for await)
 
-
 let dummy = async () => {
   console.log("name 0");
-  await name();
+   name(); //in no await
   console.log("name2");
   console.log("name3");
   console.log("name4");
 };
-
 
 function name() {
   return new Promise(
@@ -146,9 +144,6 @@ function name() {
     3000
   );
 }
-
-
-
 
 dummy();
 console.log("name5");
