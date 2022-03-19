@@ -140,17 +140,7 @@ let dummy = () => {
 };
 
 function name() {
-  // return new Promise(
-  //   (res, rej) => setTimeout(() => res(console.log("name1"))),
-  //   3000
-  // );
-  let i = 0;
-  while (i <= 9999999999) {
-    if (i == 9999999995) {
-      console.log("1");
-    }
-    i++;
-  }
+  return new Promise((res, rej) => res(console.log("name1")));
 }
 
 dummy();
