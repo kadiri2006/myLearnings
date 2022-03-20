@@ -130,7 +130,7 @@ dummy3(true, 1000)
 
 // await keyword code example   (best example for await)
 
-let dummy = async () => {
+/* let dummy = async () => {
   //if no async to function ,its gives same results as before when there is no await
   console.log("name 0");
   await name(); //in no await
@@ -146,8 +146,48 @@ function name() {
 dummy().catch((x) => console.log(`this is from dummy catch block :  ${x}`));
 console.log("name5");
 console.log("name6");
-console.log("name7");
+console.log("name7"); */
 
 //inthese case "rej" in "promise" and providing "async and await" to dummy function ,  out put displayed is as below
 
 //output:name 0,name 1,name 5,name 6,name 7
+
+/* make ice cream and assiagn time using  */
+
+let is_shop_open = false;
+
+function time(ms) {
+  return new Promise((res, rej) => {
+    if (is_shop_open) {
+      setTimeout(res, ms);
+    } else {
+      rej("shop is closed");
+    }
+  });
+}
+
+let order = async () => {
+  try {
+    await time(1000);
+    console.log("take order");
+    await time(2000);
+    console.log("chopping fruit");
+    await time(1000);
+    console.log("add water and ice");
+    await time(1000);
+    console.log("start machine");
+    await time(2000);
+    console.log("select container");
+    await time(3000);
+    console.log("select toppings");
+    await time(1000);
+    console.log("serve ice cream");
+  } catch (error) {
+    console.log(error);
+  }
+  finally {
+    console.log("thank you . visit again");
+  }
+};
+
+order();
