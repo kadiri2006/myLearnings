@@ -4,7 +4,7 @@ function one() {
 
 function two() {
   return new Promise((x, y) => {
-    y();
+    y("rejected");
   });
 }
 
@@ -21,8 +21,9 @@ function five() {
   return "five";
 }
 
-one();
-two();
+console.log(one());
+two().then(x=>console.log(x))
+
 three(3);
 
 five();
