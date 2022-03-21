@@ -4,7 +4,7 @@ function one() {
 
 function two() {
   return new Promise((x, y) => {
-    y("rejected");
+    x("two")
   });
 }
 
