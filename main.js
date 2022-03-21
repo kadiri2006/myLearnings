@@ -22,8 +22,9 @@ function five() {
 }
 
 console.log(one());
-two().then(x=>console.log(x))
+two().then((x) => console.log(x));
 
-three(3);
+console.log(three(3));
+console.log("four");
 
-five();
+console.log(five());
