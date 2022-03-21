@@ -1,16 +1,24 @@
-let result = new Promise((res, rej) => {
-  res("sucess");
-  rej("failureeees");
-});
-
-async function test() {
-  try {
-    console.log(await result);
-  } catch (error) {
-    console.log(error);
-  }
-
-  
+function one() {
+  return new Promise((x,y)=>null)
 }
 
-test();
+function three(x) {
+  let i = x;
+  while (i <= 2999999999) {
+    
+    i++;
+  }
+
+  return "three";
+}
+
+function five() {
+  return "five";
+}
+
+console.log(one());
+console.log("two");
+console.log(three(2));
+console.log("four");
+console.log(five());
+
