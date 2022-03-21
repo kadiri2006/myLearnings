@@ -1,5 +1,5 @@
 function one() {
-  return new Promise((x,y)=>x())
+  return new Promise((x,y)=>x("sucess"))
 }
 
 function three(x) {
