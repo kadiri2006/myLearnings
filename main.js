@@ -1,5 +1,13 @@
 function one() {
-  return new Promise((x, y) => null);
+  console.log("one");
+  return "one";
+}
+
+function two() {
+  return new Promise((x, y) => {
+    y();
+    console.log("two");    //even rej() function is present on above init log "two" is displayed
+  });
 }
 
 function three(x) {
@@ -8,15 +16,18 @@ function three(x) {
     i++;
   }
 
+  console.log("three");
+
   return "three";
 }
 
 function five() {
+  console.log("five");
   return "five";
 }
 
-console.log(one());
-console.log("two");
-console.log(three(2));
+one();
+two();
+three(3);
 console.log("four");
-console.log(five());
+five();
