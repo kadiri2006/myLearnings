@@ -1,30 +1,17 @@
 function one() {
-  return "one";
+  console.log("one");
+  two().then((x) => console.log(x));
+  console.log("three");
 }
 
 function two() {
-  return new Promise((x, y) => {
-    x("two");
-  });
+  return new Promise((resolve) => resolve("two"));
 }
 
-function three(x) {
-  let i = x;
-  while (i <= 2999999999) {
-    i++;
-  }
-
-  return "three";
+one();
+let i = 0;
+while (i < 199999999) {
+  i++;
 }
 
-function five() {
-  return "five";
-}
-
-console.log(one());
-
-two()
-  .then((x) => console.log(x))
-  .then((x) => console.log(three(3)))
-  .then((x) => console.log("four"))
-  .then((x) => console.log(five()));
+console.log("four");
