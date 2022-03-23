@@ -1,17 +1,9 @@
 function one() {
-  console.log("one");
-  two().then((x) => console.log(x));
-  console.log("three");
+  return new Promise((res, rej) => {
+    res("ok")
+  })
 }
 
-function two() {
-  return new Promise((resolve) => resolve("two"));
-}
 
-one();
-let i = 0;
-while (i < 199999999) {
-  i++;
-}
 
-console.log("four");
+one().then((x)=>console.log(x)).then((x)=>false).then(()=>console.log("done2"))
