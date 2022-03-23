@@ -6,4 +6,4 @@ function one() {
 
 
 
-one().then((x)=>console.log(x)).then((x)=>console.log(x)).then(()=>console.log("done2"))
+one().then((x)=>{console.log(x);return "from first"}).then((x)=>console.log(x)).then(()=>console.log("done2"))
