@@ -1,9 +1,12 @@
 function one() {
   return new Promise((res, rej) => {
-    res("ok")
-  })
+    res(2);
+  });
 }
 
-
-
-one().then((x)=>{console.log(x);return "from first"}).then((x)=>console.log(x)).then(()=>console.log("done2"))
+one()
+  .then((x) =>x<2
+  )
+  .then((x) => console.log(x))
+  .then(() => console.log("done"))
+  .catch((e) => console.log(e));
