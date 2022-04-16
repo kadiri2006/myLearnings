@@ -1,11 +1,29 @@
-for (let i = 0; i < 5; i++) {
-  setTimeout(() => {
-    console.log(i);   //0,1,2,3,4 because i refers not value but storge and let is block scope but var is functional scope
-  }, i*1000);
+let a = 0;
+function test(a) {
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => console.log(a), 5000);//5,5,5,5,5
+    a++;
+  }
 }
 
-for (var i = 0; i < 5; i++) {
-  setTimeout(() => {
-    console.log(i); //5,5,5,5,5
-  }, i * 1000);
+test(a)
+
+setTimeout(() => {
+  console.log(a);//0
+}, 7000);
+
+////////////////////////////////
+
+let a = 0;
+function test() {
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => console.log(a), 5000);//5,5,5,5,5
+    a++;
+  }
 }
+
+test()
+
+setTimeout(() => {
+  console.log(a);//5
+}, 7000);
