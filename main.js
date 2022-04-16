@@ -5,17 +5,17 @@ function test() {
 
 let testobj = {
   name: "testing object",
-  test: (arguments) => {
-    console.log(arguments);//1
-    console.log("this value ", this);//refer window obj because of arrow function 
+  test: (...arguments) => {
+    console.log(arguments); //[1, 2, 3]
+    console.log("this value ", this); //refer window obj because of arrow function
     let x1 = { ...arguments };
     let { ...x2 } = arguments;
-    console.log(x1);
-    console.log(x2);
-    let x3 = [...arguments];//Uncaught TypeError: arguments is not iterable at Object.test (main.js:15:18) at main.js:23:9
+    console.log(x1); //{0: 1, 1: 2, 2: 3}
+    console.log(x2); //{0: 1, 1: 2, 2: 3}
+    let x3 = [...arguments];
     let [...x4] = arguments;
-    console.log(x3);
-    console.log(x4);
+    console.log(x3); //[1, 2, 3]
+    console.log(x4); //[1, 2, 3]
   },
 };
 
