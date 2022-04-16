@@ -5,7 +5,8 @@ function test() {
 
 let testobj = {
   name: "testing object",
-  test: function () {
+  test: () => {
+    
     console.log("this value ", this);
     let x1 = { ...arguments };
     let { ...x2 } = arguments;
