@@ -1,16 +1,9 @@
-let result = new Promise((res, rej) => {
-  res("sucess");
-  rej("failureeees");
-});
+let a = 1;
+let input = function () {
+  console.log(a);
+};
 
-async function test() {
-  try {
-    console.log(await result);
-  } catch (error) {
-    console.log(error);
-  }
+setTimeout(input, 2000);//it prints 2 not 1
+a = 2;
 
-  
-}
 
-test();
