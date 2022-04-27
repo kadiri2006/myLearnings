@@ -1,9 +1,9 @@
-let a = 1;
 let input = function () {
-  console.log(a);
+  console.log(1);
 };
 
-setTimeout(input, 2000);//it prints 2 not 1
-a = 2;
+setTimeout(input, 2000); //it prints 1 not 2 because ,setTimeout taken value not reference
 
-
+input = function () {
+  console.log(2);
+};
