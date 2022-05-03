@@ -1,10 +1,11 @@
-function one() {
-  var b = "hello";
-  return function two() {
-    return b;
+var a = "hello";
+function outer() {
+  return function inner() {
+    console.log(a); 
   };
 }
 
-let third = one();
-b = "kadiri";
-console.log(third()); // displays "hello" not "kadiri"
+let res = outer(); // this "inner" fun does't form closure.
+
+a = "hello to hi";
+res();
