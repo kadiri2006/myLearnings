@@ -1,11 +1,12 @@
-var a = "hello";
-function outer(a) {
+function outer() {
+  var a = 10;
+  setTimeout(() => {
+    a = 20;
+  }, 1000);
   return function inner() {
-    console.log(a); //hello
+    console.log(a); //10
   };
 }
 
-let res = outer(a);
-
-a = "hello to hi";
-res();
+let x = outer();
+x() 
