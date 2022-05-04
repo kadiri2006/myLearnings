@@ -1,6 +1,6 @@
 // 1
 
-let obj = {
+let obj1 = {
   name: "hello",
   add: {
     home: "home add",
@@ -12,8 +12,11 @@ let obj = {
   },
 };
 
-let obj2 = Object.assign({}, obj);//it does not give deep clone
-obj2.add.office.office2 = "office 2 changed";
-console.log(obj2);//office 2 changed 
+let obj2 = { ...obj1 };
 
-console.log(obj);//office 2 changed
+obj2.add.office.office1 = "office 1 changed";
+
+console.log(obj1); //office 1 changed
+
+console.log(obj2); //office 1 changed
+// console.log();
