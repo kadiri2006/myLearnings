@@ -12,11 +12,17 @@ let obj1 = {
   },
 };
 
-let obj2 = { ...obj1 };
+let obj2 = {
+  ...obj1,
+  add: {
+    ...obj1.add,
+    office: {
+      ...obj1.add.office,
+      office1: "office 1 changed",
+    },
+  },
+};
 
-obj2.add.office.office1 = "office 1 changed";
-
-console.log(obj1); //office 1 changed
+console.log(obj1); //office 1 add
 
 console.log(obj2); //office 1 changed
-// console.log();
