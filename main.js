@@ -4,9 +4,10 @@ function outer() {
     a = 20;
   }, 1000);
   return function inner() {
-    console.log(a); //10
+    console.log(a); //20
   };
 }
 
 let x = outer();
-x() 
+
+setTimeout(() => x(), 1000);
