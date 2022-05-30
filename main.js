@@ -1,16 +1,9 @@
-let result = new Promise((res, rej) => {
-  res("sucess");
-  rej("failureeees");
-});
-
-async function test() {
-  try {
-    console.log(await result);
-  } catch (error) {
-    console.log(error);
+var a = 1;
+function bar() {
+  if (false) {
+    var a = 10;
   }
-
-  
+  console.log(a);
 }
 
-test();
+bar();
